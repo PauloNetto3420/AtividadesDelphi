@@ -1,0 +1,15 @@
+program Project3;
+
+uses
+  Forms,
+  Unit5 in '..\Units\Unit5.pas' {frmPrincipal},
+  Unit1 in 'Unit1.pas' {frmAcesso};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

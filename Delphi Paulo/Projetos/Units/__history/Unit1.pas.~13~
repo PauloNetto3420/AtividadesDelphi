@@ -1,0 +1,79 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, Buttons, ExtCtrls, ComCtrls, Grids, DBGrids,
+  CRMDBPesqGrid;
+
+type
+  TfrmPrincipal = class(TForm)
+    Label1: TLabel;
+    Panel1: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    Consulta1: TMenuItem;
+    Relatrio1: TMenuItem;
+    Sair1: TMenuItem;
+    Clientes1: TMenuItem;
+    Fornecedores1: TMenuItem;
+    Cidades1: TMenuItem;
+    N1: TMenuItem;
+    Estoque1: TMenuItem;
+    Estoque2: TMenuItem;
+    Entrada1: TMenuItem;
+    Saida1: TMenuItem;
+    N2: TMenuItem;
+    Sair2: TMenuItem;
+    Panel2: TPanel;
+    StatusBar2: TStatusBar;
+    Timer1: TTimer;
+    BitBtn6: TBitBtn;
+    procedure Timer1Timer(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses Unit2, Unit3;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.BitBtn3Click(Sender: TObject);
+   var
+    chessuis : TfrmTeste;
+begin
+     chessuis := Tfrmteste.create(self);
+     chessuis.showmodal
+end;
+
+procedure TfrmPrincipal.BitBtn6Click(Sender: TObject);
+var sobre :TfrmSobre;
+begin
+
+sobre := Tfrmsobre.create(self);
+sobre.showModal;
+
+end;
+
+procedure TfrmPrincipal.Timer1Timer(Sender: TObject);
+begin
+      StatusBar2.panels[2].Text := 'Hora.: '+ timetostr(time);
+      StatusBar2.panels[3].Text := 'Data.: '+ datetostr(date);
+end;
+
+end.

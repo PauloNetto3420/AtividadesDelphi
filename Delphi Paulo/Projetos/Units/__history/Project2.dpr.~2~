@@ -1,0 +1,15 @@
+program Project2;
+
+uses
+  Forms,
+  uLogin in 'uLogin.pas' {frmLogin},
+  uMenuPrin in 'uMenuPrin.pas' {frmMenuPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.Run;
+end.
